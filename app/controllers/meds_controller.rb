@@ -1,4 +1,4 @@
-class MedsController < ApplicationController
+class MedsController < ProtectedController
   before_action :set_med, only: [:show, :update, :destroy]
 
   # GET /meds
@@ -18,7 +18,7 @@ class MedsController < ApplicationController
   # POST /meds
   # POST /meds.json
   def create
-    @med = Med.new(med_params)
+    @med = current_user.meds.build(med_params)
 
     if @med.save
       render json: @med, status: :created, location: @med
@@ -30,8 +30,6 @@ class MedsController < ApplicationController
   # PATCH/PUT /meds/1
   # PATCH/PUT /meds/1.json
   def update
-    @med = Med.find(params[:id])
-
     if @med.update(med_params)
       head :no_content
     else
@@ -49,11 +47,13 @@ class MedsController < ApplicationController
 
   private
 
-    def set_med
-      @med = Med.find(params[:id])
-    end
+  def set_med
+    @med = current_user.meds.find(params[:id])
+  end
 
-    def med_params
-      params.require(:med).permit(:nickname, :clinical_name, :count, :user_id)
-    end
+  def med_params
+    params.require(:med).permit(:nickname, :clinical_name, :count, :user_id)
+  end
+
+  private :set_med, :med_params
 end
