@@ -9,6 +9,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+users = User.create([
+  {
+    email: 'herp@derp.com',
+    password: 'herp'
+  },
+  {
+    email: 'beep@thing.com',
+    password: 'beep'
+  }
+  ])
+
 meds = Med.create([
   {
     nickname: 'Klonopin',
