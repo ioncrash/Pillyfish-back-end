@@ -8,3 +8,35 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+meds = Med.create([
+  {
+    nickname: 'Klonopin',
+    clinical_name: 'Clonazepam',
+    count: 55,
+    user_id: 1
+  },
+  {
+    nickname: 'Lamotrigine',
+    clinical_name: 'Lamotrigine',
+    count: 100,
+    user_id: 1
+  },
+  {
+    nickname: 'Magnesium',
+    clinical_name: 'Magnesium',
+    count: 54,
+    user_id: 1
+  },
+  {
+    nickname: 'Potassium',
+    clinical_name: 'IC-Klor-Con',
+    count: 32,
+    user_id: 2
+  },
+  {
+    nickname: 'Omaprazole',
+    clinical_name: 'Omaprazole',
+    count: 8,
+    user_id: 2
+  }])
