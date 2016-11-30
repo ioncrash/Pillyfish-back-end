@@ -4,7 +4,7 @@ class MedsController < ProtectedController
   # GET /meds
   # GET /meds.json
   def index
-    @meds = Med.all
+    @meds = Med.where(:user_id => current_user.id)
 
     render json: @meds
   end
