@@ -1,5 +1,3 @@
-#!/bin/bash
-
 API="https://peaceful-wave-15988.herokuapp.com"
 URL_PATH="/sign-in"
 curl "${API}${URL_PATH}" \
@@ -8,9 +6,7 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "email": "herp@derp.com",
-      "password": "herp"
+      "email": "beep@thing.com",
+      "password": "beep"
     }
   }'
-
-echo
