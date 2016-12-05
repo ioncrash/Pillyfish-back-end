@@ -47,7 +47,7 @@ module Pillyfish
         origins do |origin, _env|
           '*' == ENV['CLIENT_ORIGIN'] ||
             origin == ENV['CLIENT_ORIGIN'] ||
-            origin == "http://localhost:#{cors_port}"
+            origin == "https://ioncrash.github.io/"
         end
         resource '*',
                  headers: :any,
